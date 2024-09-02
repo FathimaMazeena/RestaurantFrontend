@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import{useEffect, useState} from 'react';
+import ProductList from '../components/ProductList';
+import CategoryList from '../components/CategoryList';
 
-const MenuList = () => {
+const Menu = () => {
+
+    
     const [menus, setMenus] = useState([]);
     const [products, setProducts] = useState([]);
     const [dishes, setDishes] = useState([]);
@@ -45,12 +47,13 @@ const MenuList = () => {
         setAllItems(combinedItems);
     }, [menus, products, dishes]);
 
+
     return (
         <div className="menu-list">
-            <h3 className="p-5">TODAY'S SPECIAL</h3>
-            <div className="row g-0 justify-content-around">
+            <h3 className="p-5">Menu</h3>
+            <div className="row g-0 d-flex justify-content-around">
                 {allItems && allItems.map(item => (
-                    <div className="menu-preview card w-50" key={item._id} style={{ width: '15rem' }}>
+                    <div className="menu-preview card col-4 m-3" key={item._id} style={{ width: '15rem' }}>
                         <img src={item.image} alt={item.name} className="card-img-top" />
                         <div className="card-body">
                             <h5 className="card-title">{item.name}</h5>
@@ -60,9 +63,8 @@ const MenuList = () => {
                     </div>
                 ))}
             </div>
-            <a href="#" className="row btn btn-outline-secondary col-2 m-5 p-2">Explore Our Menus</a>
         </div>
     );
 }
 
-export default MenuList;
+export default Menu;

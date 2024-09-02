@@ -1,7 +1,10 @@
+import AdminNavbar from "../components/AdminNavbar";
+
 const Admin = () => {
     return ( 
 
         <div>
+            <AdminNavbar/>
             
         </div>
         

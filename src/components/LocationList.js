@@ -30,19 +30,17 @@ const LocationList = () => {
 
        <h3 className="p-5">LOCATIONS</h3>
          
-            <div className="row">
-                {locations && locations.map(location => (
-
-                <div className="container col-4 d-flex align-items-center " key={location._id}>
-                <div className="rounded-circle bg-secondary d-inline-block" style={{ width: '100px', height: '100px' }}></div>
-
-                    <div className="location-preview d-inline-block ml-3">
-                        <h4>{ location.name }</h4>
-                        <p>{location.description}</p>
-                    </div>
-                </div>    
-                ))}
-            </div>
+       <div className="row g-0 justify-content-around">
+                    {locations && locations.map(location => (
+                        <div className="location-preview card w-50" key={location._id} style={{ width: '15rem' }}>
+                            <img src={location.image} alt={location.name} className="card-img-top" />
+                            <div className="card-body">
+                                <h5 className="card-title">{location.name}</h5>
+                                <p className="card-text">{location.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
         
          </div>
     
