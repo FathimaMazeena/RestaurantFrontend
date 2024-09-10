@@ -11,6 +11,7 @@ import ServicePreview from "../previews/ServicePreview";
 import CategoryPreview from "../previews/CategoryPreview";
 import MenuPreview from "../previews/MenuPreview";
 import DishPreview from "../previews/DishPreview";
+import ReservationForm from "../components/ReservationForm";
 
 const Home = () => {
 
@@ -18,13 +19,15 @@ const Home = () => {
     return(
         <div className="home">
             <MenuPreview/>
+            <ProductPreview/>
+            <Offer/>
+            <ReservationForm/>
+            <DishPreview/>
             <ServicePreview/>
             <CategoryPreview/>
             <LocationPreview/>
-            <DishPreview/>
-            <Offer/>
-            <ProductPreview/>
             <QueryForm/> 
+            
            
             
             

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {AuthContext} from '../contexts/AuthContext';
 import { Navigate } from 'react-router-dom'; 
+import ProfileNavbar from '../components/ProfileNavbar';
 
 
 const MyProfile = () => {
@@ -12,7 +13,11 @@ const MyProfile = () => {
     }
 
     return ( 
+        <>
         <h2>Profile</h2>
+        <ProfileNavbar/>
+        </>
+        
      );
 }
  

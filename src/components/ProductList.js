@@ -1,6 +1,7 @@
-import{useEffect, useState} from 'react';
+import{useEffect, useState, useContext} from 'react';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContext } from '../contexts/CartContext';
 
 
 
@@ -27,6 +28,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const ProductList = ({ previewProducts, allProducts }) => {
 
     const products = previewProducts || allProducts;
+    const { addToCart } = useContext(CartContext);
 
     return ( 
         <div className="product-list">
@@ -38,7 +40,9 @@ const ProductList = ({ previewProducts, allProducts }) => {
                             <h5 className="card-title">{product.name}</h5>
                             <p><strong>Price: Rs.</strong>{product.price}</p>
                             <p className="card-text">{product.description}</p>
-                            <a href="#" className="btn btn-secondary">Add to cart</a>
+                            <button className="btn btn-secondary" onClick={() => addToCart(product)}>
+                            Add to cart
+                            </button>
                         </div>
                     </div>
                 ))}

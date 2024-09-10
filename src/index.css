@@ -12,4 +12,17 @@ code {
     monospace;
 }
 
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  width: 100%; /* Ensure the DatePicker component uses full width */
+}
+
+button, input[type="number"] {
+  width: 100%; /* Ensure the button and number input match */
+}
+
 

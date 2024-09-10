@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
+//import { useState, useEffect } from 'react';
+//import Cookies from 'js-cookie';
 import { useContext } from 'react';
 import {AuthContext} from '../contexts/AuthContext';
 
@@ -16,12 +16,12 @@ const Navbar = ()=>{
     return(
         
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <a href="/" class="navbar-brand">
-            <img src="/images/restaurant.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a href="/" className="navbar-brand">
+            <img src="/images/restaurant.png" width="30" height="30" className="d-inline-block align-top" alt=""/>
             DIVINE DINING</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navitems"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse justify-content-center" id="navitems">
+            <button className="navbar-toggler" data-toggle="collapse" data-target="#navitems"><span className="navbar-toggler-icon"></span></button>
+        <div className="collapse navbar-collapse justify-content-center" id="navitems">
                 <ul className="navbar-nav">
             <li className="nav-item active"><Link className="nav-link" to="/">Home</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/menu">Menu</Link></li>
