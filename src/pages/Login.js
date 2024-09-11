@@ -7,11 +7,6 @@ import { AuthContext } from '../contexts/AuthContext';
 
 
 
-
-
-
-
-
 const Login = () => {
 
     //const { setIsLoggedIn } = useContext(AuthContext);
@@ -40,7 +35,7 @@ const Login = () => {
         const json= await response.json();
 
         if(!response.ok){
-            setError(json.error)
+            setError(json.error);
         }
 
         if(response.ok){

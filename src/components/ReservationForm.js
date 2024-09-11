@@ -18,21 +18,26 @@ const ReservationForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!name || !email || !date || !time || people <= 0) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
     
         const reservationData = {
             name:name,
             email: email,
-            reservationDate: date, // Date selected from date picker
-            numberOfPeople: people, // Number of people
+            reservationDate: date, 
+            numberOfPeople: people, 
             time: {
                 hour: time.getHours().toString(),
                 minute: time.getMinutes().toString(),
             },
-            specialRequests: specialRequests, // Special requests from textarea
+            specialRequests: specialRequests, 
         };
     
         try {
-            const response = await fetch('api//reservations', {
+            const response = await fetch('api/reservations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +48,7 @@ const ReservationForm = () => {
             if (response.ok) {
                 const result = await response.json();
                 alert('Reservation successfully made!');
-                // Optionally, you can clear the form here
+              
                 setName('');
                 setEmail('');
                 setDate(null);

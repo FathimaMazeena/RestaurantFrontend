@@ -10,7 +10,15 @@ const QueryForm = () => {
 
     const handleSubmit= async (e)=>{
         e.preventDefault()
+
+       
         const query={name, email, queryText}
+
+        if (!name || !email || !queryText) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
+    
         const response= await fetch('/api/queries',{
             method:'POST',
             body: JSON.stringify(query),
@@ -24,7 +32,9 @@ const QueryForm = () => {
         const json= await response.json();
 
         if(!response.ok){
-            setError(json.error)
+            //setError(json.error)
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
         }
 
         if(response.ok){
@@ -32,7 +42,8 @@ const QueryForm = () => {
             setEmail('')
             setQueryText('')
             setError(null)
-            console.log('submitted', json)
+            alert('Query Successfully Submited!');
+            
         }
 
     }
@@ -84,7 +95,7 @@ const QueryForm = () => {
   
   
                <button className="btn btn-secondary m-5" type="submit">Submit</button>
-               {error && <div className="error">{error}</div>}
+               {error && <div className="error">{error}</div>} 
 
 
         </form>

@@ -3,8 +3,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartContext } from '../contexts/CartContext';
 
-
-
 {/*const ProductList = ({products}) => {
     return ( 
         <div className="product-list">
@@ -23,7 +21,6 @@ import { CartContext } from '../contexts/CartContext';
      );
 }
 */}
-
 
 const ProductList = ({ previewProducts, allProducts }) => {
 
